@@ -43,5 +43,12 @@ def merge_tables(tables):
     merged_df = pd.concat(tables,ignore_index=True)
     return merged_df
 
+def run(path):
+    files = remove_unncessary_files(path=path)
+    list_of_tables = read_excels(files=files, path=path)
+    tables = organize_tables(list_of_tables)
+    df = merge_tables(tables)
+    return df
+
 if __name__ == "__main__":
-    main()
+    run()

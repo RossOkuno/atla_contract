@@ -142,7 +142,7 @@ def alter_col_names(df):
                         'FMS', 'competition', 'reason_non_competiotin']
     return df
 
-def tmp(df):
+def run(df):
     df = add_contractor_column(df)
     df = remove_null_no_amount(df)
     df = normalize_columns(df)
@@ -159,4 +159,4 @@ def tmp(df):
     return df
 
 if __name__ == "__main__":
-    main()
+    run()
