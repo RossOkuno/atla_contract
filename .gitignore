@@ -1,3 +1,5 @@
+.vscode
+__pycache__/
 original_jmod_contract_data/
 origanized_jmod_contract_data/
 py37/
