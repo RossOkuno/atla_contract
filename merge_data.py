@@ -15,6 +15,7 @@ def remove_unncessary_files(path):
         pass
     return files
 
+
 def read_excels(files, path):
     table_dic = {}
     for filename in files:
@@ -22,6 +23,7 @@ def read_excels(files, path):
         table_dic[name] = pd.read_excel(path + "/" + filename, index=False, encodeing="utf_8")   
     list_of_tables = list(table_dic.values())
     return list_of_tables
+
 
 # Normalize column names in order to avoid mismatch
 def organize_tables(list_of_tables):
@@ -38,10 +40,12 @@ def organize_tables(list_of_tables):
         new_tables.append(table)    
     return new_tables
 
+
 # merge all tables
 def merge_tables(tables):
     merged_df = pd.concat(tables,ignore_index=True)
     return merged_df
+
 
 def run(path):
     files = remove_unncessary_files(path=path)
@@ -50,5 +54,6 @@ def run(path):
     df = merge_tables(tables)
     return df
 
+
 if __name__ == "__main__":
-    run()
+    main()

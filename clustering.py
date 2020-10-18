@@ -51,6 +51,10 @@ def get_pivoted_df(df, columns, index, values):
     pivoted_df = pd.pivot_table(data=df, columns=columns, index=index, values=values, aggfunc=np.sum).reset_index()
     return pivoted_df
 
+def get_pivoted_df_2(df, columns, index, values):
+    pivoted_df = pd.pivot_table(data=df, columns=columns, index=index, values=values, aggfunc='count').reset_index()
+    return pivoted_df
+
 
 def get_non_null_df(df, total=False):
     null_count = []
